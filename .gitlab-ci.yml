@@ -1,0 +1,23 @@
+stages:
+  - test
+  - deploy
+
+test-python:
+  stage: test
+  image: python:3.12-slim
+  before_script:
+    - python -m pip install --disable-pip-version-check --no-cache-dir -r requirements.txt
+  script:
+    - python -m unittest discover -s qa -p "test_*.py"
+
+pages:
+  stage: deploy
+  image: alpine:3.20
+  script:
+    - mkdir -p public
+    - cp spectrum-analyzer-fixed.html public/index.html
+    - cp spectrum-fixed.py public/spectrum-fixed.py
+    - cp SPECTRUM_FIXED_README.md public/README.md
+  pages: true
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'

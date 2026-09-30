@@ -1,0 +1,29 @@
+# Input recordings and generated analysis results
+*.log
+*.dec.txt
+results/
+
+# Python and Node.js temporary files
+__pycache__/
+*.py[cod]
+node_modules/
+qa/*.png
+
+# Legacy local decoder tools are not needed by the TXT-based web application
+functions/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# GitLab Pages build output
+public/
