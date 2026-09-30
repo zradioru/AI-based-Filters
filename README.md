@@ -23,6 +23,6 @@
 
 Подробное описание алгоритма находится в `SPECTRUM_FIXED_README.md`.
 
-## GitLab Pages
+## GitHub Pages
 
-Файл `.gitlab-ci.yml` публикует `spectrum-analyzer-fixed.html` как `index.html` из каталога `public`. Публикация выполняется только из основной ветки проекта; вычислительные тесты запускаются локально перед внесением изменений.
+Workflow `.github/workflows/pages.yml` публикует `spectrum-analyzer-fixed.html` как главную страницу сайта при каждом изменении ветки `main`. Готовый сайт доступен по адресу <https://zradioru.github.io/AI-based-Filters/>. Вычислительные тесты выполняются локально перед внесением изменений и не задерживают публикацию Pages.
